@@ -1,0 +1,8 @@
+region                = "us-east-1"
+aws_vpc_cider         = "172.0.0.0/8"
+public_subnet_a_cider = "172.0.1.0/24"
+public_subnet_b_cider = "172.0.4.0/24"
+zone_a                = "us-east-1a"
+zone_b                = "us-east-1b"
+application_port      = "8080"
+health_end_point      = "/health"
