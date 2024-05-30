@@ -5,7 +5,7 @@ resource "aws_lb" "node_app_lb" {
   load_balancer_type         = "application"
   security_groups            = [aws_security_group.node_app_lb_security_group.id]
   subnets                    = [aws_subnet.public_subnet_a.id, aws_subnet.public_subnet_b.id]
-  enable_deletion_protection = true
+  
   # access_logs {
   #   bucket  = aws_s3_bucket.lb_access_logs.id
   #   prefix  = "node-app-lb"
