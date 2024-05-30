@@ -12,12 +12,8 @@ resource "aws_route_table" "public" {
 }
 
 
-resource "aws_route_table_association" "public_subnet_a" {
-  subnet_id      = aws_subnet.public_subnet_a
-  route_table_id = aws_route_table.public.id
-}
-
-resource "aws_route_table_association" "public_subnet_b" {
-  subnet_id      = aws_subnet.public_subnet_b
+resource "aws_route_table_association" "public_subnet_route_table" {
+  count = 2
+  subnet_id      = [aws_subnet.public_subnet_a.id, aws_subnet.public_subnet_b.id][count.index]
   route_table_id = aws_route_table.public.id
 }
