@@ -11,7 +11,7 @@ variable "zone_b" {
 }
 
 variable "vpc_cider" {
-  default = "172.0.0.0/8"
+  default = "172.0.0.0/16"
 }
 
 variable "public_subnet_a_cider" {
