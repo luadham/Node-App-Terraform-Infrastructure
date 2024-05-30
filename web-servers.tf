@@ -23,5 +23,5 @@ resource "aws_lb_target_group_attachment" "node_app_tg_attachment" {
   count            = 2
   target_group_arn = module.networking.node_app_tg_arn
   target_id        = [aws_instance.webserver_a.id, aws_instance.webserver_b.id][count.index]
-  port             = 80
+  port             = var.application_port
 }
