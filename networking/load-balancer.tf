@@ -7,7 +7,7 @@ resource "aws_lb" "node_app_lb" {
   subnets                    = [aws_subnet.public_subnet_a.id, aws_subnet.public_subnet_b.id]
   enable_deletion_protection = true
   access_logs {
-    bucket  = aws_s3_bucket.lb-access-logs.id
+    bucket  = aws_s3_bucket.lb_access_logs.id
     prefix  = "node-app-lb"
     enabled = true
   }
