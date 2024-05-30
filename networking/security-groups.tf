@@ -7,7 +7,7 @@ resource "aws_security_group" "node_app_lb_security_group" {
   ingress {
     from_port   = 80
     to_port     = 80
-    protocol    = "HTTP"
+    protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
 
@@ -34,7 +34,7 @@ resource "aws_security_group" "web_server_security_group" {
   ingress {
     from_port   = var.application_port
     to_port     = var.application_port
-    protocol    = "HTTP"
+    protocol    = "tcp"
     cidr_blocks = [ aws_vpc.main.cidr_block ]
   }
 
